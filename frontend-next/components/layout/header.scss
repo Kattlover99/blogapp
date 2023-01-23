@@ -1,0 +1,115 @@
+.homeHeader {
+  border-bottom: 0.5px solid $cinza01;
+
+  .conteudoCabecalhoPrincipal {
+    display: flex;
+    padding: 8px 16px;
+
+    .logoHeaderPrincipal {
+      position: relative;
+      min-width: 100px;
+      width: 140px;
+      height: 30px;
+    }
+    .barraPesquisa {
+      position: relative;
+      flex: 1;
+      margin-left: 16px;
+      display: flex;
+      align-items: center;
+
+      .containerImagemLupa {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 8px;
+      }
+
+      input {
+        background-color: $corPrimaria04;
+        border: none;
+        outline: none;
+        font-size: 12px;
+        padding: 8px 8px 8px 36px;
+        font-family: $fontLight;
+        border-radius: 4px;
+        color: $corPrimaria02;
+
+        &:focus {
+          border: 1px solid $corPrimaria02;
+        }
+      }
+    }
+  }
+  .resultadoPesquisaContainer {
+    position: absolute;
+    background-color: $white;
+    width: 100%;
+    z-index: 0;
+
+    .resultadoPesquisa{
+      display: flex;
+      padding: 10px 16px;
+      align-items: center;
+
+      &:hover{
+        background-color: $cinza00;
+      }
+
+      .avatar{
+        width: 32px;
+        height: 32px;
+        margin-right: 8px;
+      }
+
+      .informacoesUsuario{
+        >*{
+          display:block;
+          font-size:12px;
+          color: $cinza04;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $desktopBreakpoint) {
+    background-color: $white;
+    border: none;
+    margin-bottom: 25px;
+
+    .conteudoCabecalhoPrincipal {
+      max-width: 60%;
+      margin: auto;
+      align-items: center;
+      justify-content: center;
+      .logoHeaderPrincipal {
+        width: 200px;
+        height: 30px;
+      }
+      .barraPesquisa {
+        flex: 0.6;
+        margin: 0 10px 0 30px;
+
+        input {
+          width: 100%;
+        }
+      }
+      .barraNavegacao {
+        ul {
+          li {
+            margin: 0 0 0 20px;
+          }
+        }
+      }
+    }
+
+    .resultadoPesquisaContainer{
+      width:24%;
+      margin: auto;
+      padding-bottom: 5px;
+      right: 0;
+      left: 7%;
+      box-shadow: 0 4px 5px $cinza02;
+    }
+  }
+}

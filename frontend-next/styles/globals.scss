@@ -1,0 +1,122 @@
+@import "variables.scss";
+@import "../public/fonts/fonts.scss";
+/* Font import from public folder */
+
+* {
+  font-family: $fontRegular;
+  font-size: 14px;
+}
+
+html,
+body,
+#__next {
+  height: 100%;
+  margin: 0;
+}
+
+.avatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.oculto {
+  display: none !important;
+}
+
+input {
+  &::placeholder {
+    /* chrome, opera, safari, firefox*/
+    color: $cinza02;
+    opacity: 1;
+  }
+  &:-ms-input-placeholder {
+    /*internet explorer 10 & 11 */
+    color: $cinza02;
+  }
+
+  &::-ms-input-placeholder {
+    /*edge */
+    color: $cinza02;
+  }
+}
+
+.mensagemValidacao {
+  display: block;
+  color: $vermelho;
+  font-size: 90%;
+  margin-top: -18px;
+  margin-bottom: 15px;
+}
+
+.desktop {
+  @media screen and (min-width: $desktopBreakpoint) {
+    display: block;
+  }
+  @media screen and (max-width: calc($desktopBreakpoint - 1px)) {
+    display: none;
+  }
+}
+.mobile {
+  @media screen and (min-width: $desktopBreakpoint) {
+    display: none;
+  }
+  @media screen and (max-width: calc($desktopBreakpoint - 1px)) {
+    display: block;
+  }
+}
+
+.barraNavegacao {
+  ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 10px 0px;
+
+    li {
+      list-style: none;
+      cursor: pointer;
+    }
+  }
+}
+
+.linhaDivisoria {
+      margin: 0 auto;
+      background-color: $cinza00;
+      border: none;
+      height: 1px;
+      width: 95%;
+    }
+
+strong {
+  font-family: $fontBold;
+}
+
+body {
+  @media screen and (min-width: $desktopBreakpoint) {
+    background-color: $cinza05;
+    background-image: url("../public/image/bgFundo.svg");
+  }
+}
+
+.largura30pctDesktop {
+  @media screen and (min-width: $desktopBreakpoint) {
+    width: 35%;
+    margin: auto;
+  }
+}
+
+/* toastify css*/
+@import "react-toastify/dist/ReactToastify.css";
+
+/*  components css */
+@import "../components/button/button.scss";
+@import "./paginaPublica.scss";
+@import "../components/inputPublico/inputPublico.scss";
+@import "../pages/cadastro/cadastro.scss";
+@import "../components/layout/header.scss";
+@import "../components/layout/footer.scss";
+@import "../components/feed/feed.scss";
+@import '../components/headerComAcoes/headerComAcoes.scss';
+@import '../pages/perfil/perfil.scss';
+@import '../pages/publicacao/publicacao.scss';
+@import '../components/loading/loading.scss';

@@ -1,0 +1,40 @@
+.cabecalhoComAcoes {
+  display: flex;
+  /* border-bottom: 0.5px solid $cinza00; */
+  padding: 0 20px 0;
+  background-color: $white;
+  align-items: center;
+
+  h3 {
+    font-family: $fontBold;
+    font-size: 16px;
+    text-align: center;
+    flex: 1;
+  }
+  .cabecalhoComAcoesTextoEsquerda{
+    font-size: 12px;
+    color: $cinza03;
+    cursor: pointer;
+  }
+
+  .btnAcaoDireita{
+    border: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    color: $corPrimaria02;
+    font-family: $fontBold;
+    font-size: 12px;
+  }
+  @media screen and (min-width:$desktopBreakpoint) {
+    h3{
+      font-size: 18px;
+    }
+    @media screen and (min-width:$desktopBreakpoint) {
+      .cabecalhoComAcoesTextoEsquerda,.btnAcaoDireita{
+        font-size: 14px;
+      }
+    }
+  }
+}
