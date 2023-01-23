@@ -1,0 +1,88 @@
+@import "../../../styles.scss";
+
+.cabecalhoPerfil {
+  background-color: var(--white);
+
+  .acoesCabecalhoPerfil {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+
+    img {
+      cursor: pointer;
+    }
+
+    h3 {
+      flex: 1;
+      text-align: center;
+      font-family: var(--fontBold);
+      color: var(--gray4);
+      font-size: 16px;
+      margin: 0;
+    }
+  }
+
+  .estatisticas {
+    display: flex;
+    align-items: center;
+    padding: 14px 10px 4px;
+
+    .conteudoEstatisticas {
+      flex: 0.5;
+
+      .numeros {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 14px;
+
+        .numero {
+          > * {
+            text-align: center;
+            color: var(--gray4);
+            display: block;
+            margin: 2px;
+          }
+
+          strong {
+            font-family: var(--fontBold);
+            font-size: 14px;
+          }
+
+          span {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $breakpointDesktop) {
+    .acoesCabecalhoPerfil {
+      padding: 20px;
+      margin: auto;
+      h3 {
+        font-size: 18px;
+      }
+    }
+
+    .estatisticas {
+      padding: 24px 10px 32px;
+
+      .conteudoEstatisticas {
+        .numeros {
+          margin-bottom: 20px;
+
+          .numero {
+            strong {
+              font-size: 18px;
+            }
+
+            span {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

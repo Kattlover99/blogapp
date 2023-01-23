@@ -1,0 +1,50 @@
+<div class="cabecalhoPerfil desktopContent">
+  <div class="acoesCabecalhoPerfil">
+    <img
+      src="assets/images/setaEsquerda.svg"
+      alt="Seta esquerda"
+      class="mobile"
+      (click)="voltarParaHome()"
+      *ngIf="estaPerfilPessoal"
+    />
+    <h3>{{ usuario?.nome }}</h3>
+
+    <img
+      src="assets/images/logout.svg"
+      alt="Icone de Logout"
+      (click)="logout()"
+      *ngIf="estaPerfilPessoal"
+    />
+  </div>
+  <hr class="linhaHorizontal" />
+
+  <div class="estatisticas">
+    <app-avatar
+      customClassName="profileAvatar bordaGradienteAvatar"
+      [src]="usuario?.avatar"
+    ></app-avatar>
+
+    <div class="conteudoEstatisticas">
+      <div class="numeros">
+        <div class="numero">
+          <strong>{{ usuario?.publicacoes }}</strong>
+          <span>Publicações</span>
+        </div>
+        <div class="numero">
+          <strong>{{ usuario?.seguidores }}</strong>
+          <span>Seguidores</span>
+        </div>
+        <div class="numero">
+          <strong>{{ usuario?.seguindo }}</strong>
+          <span>Seguindo</span>
+        </div>
+      </div>
+      <app-button
+        classCss="btnCabecalhoPerfil"
+        [text]="obterTextoBotaoPrincipal()"
+        (click)="manipularCliqueDoBotaoPrincipal()"
+        [color]="obterCorBotaoPrincipal()"
+      ></app-button>
+    </div>
+  </div>
+</div>

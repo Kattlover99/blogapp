@@ -1,0 +1,88 @@
+@import "../../../styles.scss";
+.layoutInterno {
+  height: 100%;
+
+  .conteudoInterno {
+    height: 100%;
+    background-color: var(--white);
+
+    .containerEdicaoPerfil {
+      background-color: var(--white);
+      height: 100%;
+      .conteudoEdicaoPerfil {
+        .edicaoAvatar {
+          app-upload-image {
+            cursor: pointer;
+            span {
+              display: block;
+              text-align: center;
+              color: var(--primaryColor);
+              font-size: 12px;
+              text-decoration: underline;
+              margin-bottom: 14px;
+            }
+          }
+        }
+
+        .edicaoNomeUsuario {
+          padding: 14px;
+
+          .conteudoEdicaoNome {
+            display: flex;
+            align-items: center;
+
+            label {
+              font-size: 12px;
+              color: var(--gray3);
+            }
+
+            input {
+              flex: 1;
+              margin: 0 14px;
+              border: none;
+              font-size: 12px;
+              color: var(--gray4);
+              outline: none;
+              font-family: var(--fontBold);
+            }
+          }
+
+          .linhaHorizontal {
+            margin-top: 14px;
+            width: 100%;
+          }
+        }
+      }
+
+      @media screen and (min-width: $breakpointDesktop) {
+        .conteudoEdicaoPerfil {
+          height: 100%;
+          .linhaHorizontal {
+            width: 94%;
+          }
+
+          .edicaoAvatar {
+            app-upload-image {
+              span {
+                font-size: 16px;
+              }
+            }
+          }
+
+          .edicaoNomeUsuario {
+            .conteudoEdicaoNome {
+              label,
+              input {
+                font-size: 14px;
+              }
+
+              img {
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

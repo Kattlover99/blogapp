@@ -1,0 +1,57 @@
+<div class="layoutInterno">
+  <app-header class="desktop"></app-header>
+
+  <div class="conteudoInterno desktopContent" [formGroup]="form">
+    <div class="containerPublicacao">
+      <app-cabecalho-com-acoes
+        titulo="Nova publicação"
+        [classeCss]="obterClasseCssCabecalho()"
+        [srcImagemEsquerda]="obterImagemEsquerda()"
+        [textoAcaoDireita]="obterTextoAcaoDireita()"
+        [desabilitarAcaoDireita]="verificarHabilitacaoAcaoDireita()"
+        (aoClicarAcaoDireita)="manipularCliqueAcaoDireita()"
+        (aoClicarAcaoEsquerda)="manipularCliqueAcaoEsquerda()"
+      >
+      </app-cabecalho-com-acoes>
+
+      <hr class="linhaHorizontal" />
+
+      <div class="conteudoPublicacao">
+        <div class="primeiraEtapa" *ngIf="estaNaPrimeiraEtapa()">
+          <app-upload-image
+            [referencesformControl]="obterReferenciaInput('file')"
+            [placeholderImage]="obterImagemPrevisualizacao()"
+            classImagePreviewCSS="imagemPrevisualizacaoPublicacao"
+            containerCSS="paginaPublicacao"
+            (updateImage)="armazenarImagemPrevisualizacao($event)"
+          >
+            <span class="textoArraste desktop">Arraste sua foto aqui!</span>
+            <app-button
+              text="Selecione uma imagem"
+              classeCss="botaoPublicacao"
+            ></app-button>
+          </app-upload-image>
+        </div>
+
+        <div class="segundaEtapa" *ngIf="estaNaSegundaEtapa()">
+          <app-upload-image
+            [referencesformControl]="obterReferenciaInput('file')"
+            [placeholderImage]="obterImagemPrevisualizacao()"
+            classImagePreviewCSS="imagemPrevisualizacaoPublicacao2Etapa"
+            containerCSS="paginaPublicacao"
+            (updateImage)="armazenarImagemPrevisualizacao($event)"
+          >
+          </app-upload-image>
+
+          <textarea
+            placeholder="Escreva uma legenda..."
+            formControlName="descricao"
+            rows="5"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+</div>

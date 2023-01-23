@@ -1,0 +1,69 @@
+@import "../../../../styles.scss";
+
+@mixin btnNormal {
+  color: var(--white);
+  background-color: var(--primaryColor);
+}
+
+@mixin btnOutline {
+  background-color: var(--white);
+  color: var(--primaryColor);
+  border: 1px solid var(--primaryColor);
+}
+
+.btn {
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  &.primary {
+    @include btnNormal;
+    &:hover {
+      @include btnOutline;
+    }
+  }
+  &.outline {
+    @include btnOutline;
+    &:hover {
+      @include btnNormal;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+  &.publicButton {
+    margin-top: 40px;
+    padding: 12px;
+    width: 80%;
+    font-size: 16px;
+  }
+
+   &.btnCabecalhoPerfil {
+        font-size: 12px;
+        padding: 8px;
+        border-radius: 4px;
+    }
+
+    &.botaoPublicacao {
+        background-color: var(--corPrimaria2);
+        font-size: 12px;
+        padding: 10px 60px;
+
+        &:hover {
+            border: 1px solid var(--corPrimaria2);
+            color: var(--corPrimaria2);
+        }
+    }
+    @media screen and (min-width: $breakpointDesktop) {
+        &.btnCabecalhoPerfil {
+            font-size: 16px;
+            padding: 12px;
+        }
+
+        &.botaoPublicacao {
+            font-size: 14px;
+            padding: 12px 70px;
+        }
+    }
+}

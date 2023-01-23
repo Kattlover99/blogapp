@@ -1,0 +1,121 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./assets/fonts/fonts.scss";
+
+//variables sass, needs import
+$breakpointDesktop: 992px;
+
+//global variables
+:root {
+  --fontRegular: "Biennale Regular";
+  --fontBold: "Biennale Bold";
+  --fontLight: "Biennale Light";
+
+  --primaryColor: #5e49ff;
+  --primaryColor2: #25cbd3;
+  --primaryColor3: #f0f5ff;
+
+  --gray: #f4f4f4;
+  --gray1: #dadada;
+  --gray2: #7c7786;
+  --gray3: #4d4c4d;
+  --gray4: #333333;
+  --white: #fff;
+  --red: #ff0000;
+
+  --breakpointDesktop: "992px";
+}
+
+* {
+  font-family: var(--fontRegular);
+  font-size: 14;
+}
+
+html,
+body {
+  margin: 0;
+  border: 0;
+  height: 100%;
+}
+
+body {
+  @media screen and (min-width: $breakpointDesktop) {
+    background-color: var(--gray);
+    background-image: url("/assets/images/fundoDesktop.svg");
+    background-position: center;
+    background-size: cover;
+  }
+}
+.hidden {
+  display: none !important;
+}
+
+input {
+  &::placeholder,
+  &:-ms-input-placeholder,
+  &:-ms-input-placeholder {
+    color: car(--gray2);
+  }
+}
+.errorMessage {
+  color: var(--red);
+  margin: 5px;
+  font-size: 80%;
+}
+
+.desktop {
+  display: none;
+  @media screen and (min-width: $breakpointDesktop) {
+    display: block;
+  }
+}
+
+.mobile {
+  display: block;
+  @media screen and (min-width: $breakpointDesktop) {
+    display: none;
+  }
+}
+
+.internalLayout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .internalContent {
+    flex: 1;
+  }
+}
+
+strong {
+  font-size: 12px;
+  color: var(--gray4);
+}
+
+.desktopContent {
+  @media screen and (min-width: $breakpointDesktop) {
+    width: 30%;
+    margin: auto;
+  }
+}
+
+.linhaHorizontal {
+  height: 0.5px;
+  border: none;
+  background-color: var(--gray1);
+  margin: 0 auto;
+
+  @media screen and (min-width: $breakpointDesktop) {
+    width: 90%;
+  }
+}
+
+.bordaGradienteAvatar {
+  border: solid 4px transparent;
+  background-image: linear-gradient(to bottom, white, white),
+    radial-gradient(
+      circle at top center,
+      var(--primaryColor),
+      var(--primaryColor2)
+    );
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}

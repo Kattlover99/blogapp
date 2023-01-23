@@ -1,0 +1,22 @@
+<section [ngClass]="['publicPageContainer', customClassCSS]">
+  <div [ngClass]="['containerLogo', logoClass]">
+    <img
+    src="assets/images/logo.svg"
+    alt="Logo Devaria"
+    class="logo"
+    />
+  </div>
+
+  <div class="contentContainer">
+    <form>
+        <ng-content select="[formContent]"></ng-content>
+        <app-button
+        [text]="textButtonSubmit"
+        type="submit"
+        classCss="publicButton"
+        (click)="handleSubmit()"
+        ></app-button>
+    </form>
+    <ng-content select="[footer]"></ng-content>
+    </div>
+</section>

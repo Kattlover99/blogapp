@@ -1,0 +1,76 @@
+@import "../../../../styles.scss";
+
+.containerUploadImage {
+  &.paginaPublicacao {
+    .containerPreview {
+      .imagemPrevisualizacaoPublicacao,
+      .imagemPrevisualizacaoPublicacao2Etapa {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+      }
+    }
+  }
+  &.registerPageUpload {
+    text-align: center;
+    cursor: pointer;
+    object-fit: cover;
+    position: relative;
+    .avatarPreview,
+    .imagemPrevisualizacaoPublicacao,
+    .imagemPrevisualizacaoPublicacao2Etapa {
+      width: 120px;
+      height: 120px;
+      border: 1px solid var(--gray1);
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    &::after {
+      position: absolute;
+      display: flex;
+      content: url("/assets/images/camera.svg");
+      width: 40px;
+      height: 40px;
+      right: 0px;
+      left: 90px;
+      bottom: 5px;
+      margin: auto;
+    }
+  }
+  .containerPreview {
+    border: 1px solid var(--gray);
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &.uploadImagemEdicaoPerfil {
+    .containerPreview {
+      text-align: center;
+      padding: 14px;
+
+      .avatarEdicaoPerfil {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: contain;
+      }
+    }
+
+    .ngContent {
+      text-align: center;
+
+      span {
+        color: var(--primaryColor);
+      }
+    }
+    @media screen and (min-width: $breakpointDesktop) {
+      .containerPreview {
+        .avatarEdicaoPerfil {
+          width: 120px;
+          height: 120px;
+        }
+      }
+    }
+  }
+}

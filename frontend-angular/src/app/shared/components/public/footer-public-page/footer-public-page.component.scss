@@ -1,0 +1,13 @@
+.publicPageFooter {
+  text-align: center;
+  margin-top: 24px;
+  p {
+    color: var(--gray3);
+    margin: 0px 0px 2px;
+  }
+
+  a {
+    color: var(--primaryColor);
+    font-family: var(--fontBold);
+  }
+}

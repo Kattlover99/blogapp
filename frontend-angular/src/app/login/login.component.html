@@ -1,0 +1,25 @@
+<app-public-page textButtonSubmit="Login" (submitForm)="submit()">
+  <app-public-input
+    image="assets/images/envelope.svg"
+    placeholder="E-mail"
+    type="email"
+    [referencesForm]="getReferences('login')"
+    formContent
+  >
+  </app-public-input>
+
+  <app-public-input
+    image="assets/images/chave.svg"
+    placeholder="Senha"
+    type="password"
+    [referencesForm]="getReferences('password')"
+    formContent
+  ></app-public-input>
+  <app-footer-public-page
+    question="Não possui uma conta?"
+    actionText="Faça seu cadastro agora!"
+    route="/register"
+    footer
+  >
+  </app-footer-public-page>
+</app-public-page>

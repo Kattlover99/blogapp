@@ -1,0 +1,31 @@
+@import "../../../../../styles.scss";
+
+.navigationBar {
+  ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    padding: 10px 0 5px;
+
+    li {
+      list-style: none;
+      
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  @media screen and (min-width: $breakpointDesktop) {
+    ul {
+      li {
+        cursor: pointer;
+        &:nth-child(2) {
+          margin: auto 20px;
+        }
+      }
+    }
+  }
+}

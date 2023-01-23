@@ -1,0 +1,12 @@
+<div class="layoutInterno">
+  <app-header class="desktop"></app-header>
+  <app-cabecalho-perfil
+  [usuario]="usuario"
+  ></app-cabecalho-perfil>
+
+  <div class="conteudoInterno">
+    <app-feed [usuario]="usuario"></app-feed>
+  </div>
+
+  <app-footer></app-footer>
+</div>

@@ -1,0 +1,14 @@
+@import "../../styles.scss";
+
+app-public-page {
+  app-public-input:first-of-type {
+    display: block;
+    margin-top: 56px;
+    margin-bottom: 24px;
+  }
+  @media screen and (min-width: $breakpointDesktop) {
+    app-public-input:first-of-type {
+    margin-top: 0px;
+  }
+  }
+}

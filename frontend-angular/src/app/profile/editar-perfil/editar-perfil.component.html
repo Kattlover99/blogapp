@@ -1,0 +1,48 @@
+<div class="layoutInterno">
+  <app-header class="desktop"></app-header>
+  <div class="conteudoInterno desktopContent">
+    <div class="containerEdicaoPerfil" [formGroup]="form">
+      <div class="conteudoEdicaoPerfil">
+        <app-cabecalho-com-acoes
+          textoAcaoEsquerda="Cancelar"
+          titulo="Editar Perfil"
+          textoAcaoDireita="Concluir"
+          (aoClicarAcaoEsquerda)="voltarParaHome()"
+          (aoClicarAcaoDireita)="atualizarPerfil()"
+          [desabilitarAcaoDireita]="obterReferenciaInput('nome').invalid"
+        ></app-cabecalho-com-acoes>
+
+        <hr class="linhaHorizontal" />
+
+        <div class="edicaoAvatar">
+          <app-upload-image
+            [referencesformControl]="obterReferenciaInput('file')"
+            [placeholderImage]="usuarioLogado?.avatar"
+            classImagePreviewCSS="avatarEdicaoPerfil bordaGradienteAvatar
+"
+            containerCSS="uploadImagemEdicaoPerfil"
+            (updateImage)="manipularAtualizacaoImagem($event)"
+          >
+            <span>Alterar foto do perfil</span>
+          </app-upload-image>
+        </div>
+
+        <hr class="linhaHorizontal" />
+
+        <div class="edicaoNomeUsuario">
+          <div class="conteudoEdicaoNome">
+            <label>Nome</label>
+            <input type="text" formControlName="nome" />
+            <img
+              (click)="limparInputNome()"
+              src="assets/images/limpar.svg"
+              alt="icone limpar"
+            />
+          </div>
+          <hr class="linhaHorizontal" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

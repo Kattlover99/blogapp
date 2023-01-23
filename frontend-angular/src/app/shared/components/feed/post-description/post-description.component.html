@@ -1,0 +1,91 @@
+<div class="containerPost">
+  <a [routerLink]="obterUrlPerfil()">
+    <div class="headerPost">
+      <app-avatar
+        [src]="post.usuario?.avatar"
+        customClassName="feedDesktop"
+      ></app-avatar>
+      <strong>{{ post.usuario?.nome }}</strong>
+    </div>
+  </a>
+
+  <div class="photoPost">
+    <img [src]="post.foto" />
+  </div>
+
+  <div class="postFooter">
+    <div class="postAction">
+      <img
+        (click)="handleLikeButton()"
+        class="iconComment"
+        [src]="getLikeImage()"
+        alt="Icone curtir"
+      />
+      <img
+        (click)="changeExibitionCommentBox()"
+        [src]="getCommentImage()"
+        alt="Icone curtir"
+      />
+      <span class="likes">
+        Curtido por <strong>{{ post.quantidadeCurtidas }} pessoas</strong>
+      </span>
+    </div>
+
+    <div class="postDescription">
+      <strong class="userName">
+        {{ post.usuario?.nome }}
+      </strong>
+      <p class="description">
+        {{ post.descricao.substring(0, descriptionCharatersLimit).trim() }}
+        <span
+          *ngIf="post.descricao.length > descriptionCharatersLimit"
+          class="threeDotsPost"
+        >
+          ...
+        </span>
+        <span
+          (click)="showFullDescription()"
+          class="showMore"
+          *ngIf="post.descricao.length > descriptionCharatersLimit"
+        >
+          mais
+        </span>
+      </p>
+    </div>
+
+    <div class="commentsContainer">
+      <div *ngFor="let comment of post.comentarios" class="comment">
+        <strong class="userName">
+          {{ comment.nome }}
+        </strong>
+        <p class="description">
+          {{ comment.comentario }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="makeComment" *ngIf="alternateShowCommentBox">
+    <app-avatar
+      customClassName="feedDesktop"
+      [src]="loggedUser?.avatar"
+    ></app-avatar>
+    <textarea
+      (keyup)="checkRowsNumber()"
+      (keyup.enter)="makeComment()"
+      [rows]="quantityOfRowsTextarea"
+      [(ngModel)]="currentComment"
+      autofocus="true"
+      placeholder="Adicione um comentário..."
+    ></textarea>
+
+    <button
+      [disabled]="!validateComment()"
+      (click)="makeComment()"
+      type="button"
+      class="btnPost desktop"
+    >
+      Publicar
+    </button>
+  </div>
+</div>

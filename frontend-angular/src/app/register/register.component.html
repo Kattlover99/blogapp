@@ -1,0 +1,52 @@
+<app-public-page
+textButtonSubmit="Cadastro"
+customClassCSS="registerPage"
+logoClass="desktop"
+(submitForm)="handleSubmit()"
+>
+   <app-upload-image
+    [referencesformControl]="getReferences('file')"
+    placeholderImage="assets/images/avatar.svg"
+    classImagePreviewCSS="avatarPreview"
+    containerCSS="registerPageUpload"
+    formContent
+  ></app-upload-image>
+
+    <app-public-input
+    image="assets/images/usuarioAtivo.svg"
+    type="text"
+    placeholder="Nome Completo"
+    [referencesForm]="getReferences('name')"
+    formContent
+  ></app-public-input>
+
+  <app-public-input
+    image="assets/images/envelope.svg"
+    type="email"
+    placeholder="Email"
+    [referencesForm]="getReferences('email')"
+    formContent
+  ></app-public-input>
+
+  <app-public-input
+    type="password"
+    image="assets/images/chave.svg"
+    placeholder="Senha"
+    [referencesForm]="getReferences('password')"
+    formContent
+  ></app-public-input>
+
+  <app-public-input
+    type="password"
+    image="assets/images/chave.svg"
+    placeholder="Confirma senha"
+    [referencesForm]="getReferences('confirmPassword')"
+    formContent
+  ></app-public-input>
+
+  <app-footer-public-page
+  question="Já possui uma conta?"
+  actionText="Faça seu login agora!"
+  route="/login"
+  footer></app-footer-public-page>
+</app-public-page>

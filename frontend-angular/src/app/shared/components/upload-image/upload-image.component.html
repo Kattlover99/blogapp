@@ -1,0 +1,24 @@
+<section
+  [ngClass]="['containerUploadImage', containerCSS]"
+  (click)="inputFile.click()"
+>
+  <div class="containerPreview" *ngIf="placeholderImage">
+    <img
+      [src]="placeholderImage"
+      alt="Imagem pre visualização"
+      [class]="classImagePreviewCSS"
+    />
+  </div>
+
+  <div class="ngContent">
+    <ng-content ></ng-content>
+  </div>
+
+  <input
+    type="file"
+    class="hidden"
+    accept="image/*"
+    (change)="changeImage($event)"
+    #inputFile
+  />
+</section>

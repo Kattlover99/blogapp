@@ -1,0 +1,47 @@
+@import "../../../../../styles.scss";
+
+.publicPageContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 32px;
+  background-color: var(--white);
+
+  .contentContainer {
+    width: 100%;
+
+    form {
+      app-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  @media screen and (min-width: $breakpointDesktop) {
+    flex-direction: row;
+    padding: 0 140px;
+
+    .containerLogo {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+      height: 40%;
+
+      .logo {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+
+    .contentContainer {
+      flex: 1;
+      border: 1px solid var(--primaryColor);
+      border-radius: 26px;
+      padding: 56px;
+    }
+  }
+}

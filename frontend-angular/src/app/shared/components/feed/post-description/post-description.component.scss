@@ -1,0 +1,157 @@
+@import "../../../../../styles.scss";
+
+.containerPost {
+  margin-top: 18px;
+
+  > a {
+    text-decoration: none;
+
+    .headerPost {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2px;
+      padding: 0 12px;
+    }
+  }
+
+  .photoPost {
+    img {
+      width: 100%;
+      height: auto;
+      max-height: 360px;
+      object-fit: cover;
+    }
+  }
+  .postFooter {
+    padding: 0px 16px;
+
+    strong.userName {
+      float: left;
+      margin-right: 5px;
+    }
+
+    p.description {
+      margin: 0;
+      font-size: 12px;
+      color: var(--gray4);
+    }
+
+    .postAction {
+      display: flex;
+      align-items: center;
+
+      .iconComment {
+        margin: 0 8px;
+      }
+
+      .likes {
+        margin-left: 8px;
+        font-size: 10px;
+        font-family: var(--fontLight);
+
+        strong {
+          margin-left: 2px;
+          font-size: 10px;
+        }
+      }
+    }
+    .postDescription {
+      margin-bottom: 5px;
+    }
+
+    .commentsContainer {
+      max-height: 100px;
+      overflow-y: auto;
+      .comment {
+        margin-bottom: 5px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  .makeComment {
+    width: 98%;
+    align-items: center;
+    padding: 0 13px;
+    display: flex;
+
+    textarea {
+      resize: none;
+      outline: none;
+      border: none;
+      flex: 1;
+      font-size: 12px;
+      color: var(--gray2);
+    }
+    .btnPost {
+      cursor: pointer;
+      background-color: transparent;
+      font-size: 14px;
+      border: 0;
+      color: var(--primaryColor);
+    }
+  }
+}
+
+@media screen and (min-width: $breakpointDesktop) {
+  .containerPost {
+    &:first-child {
+      margin-top: 0;
+      padding-top: 8px;
+    }
+
+    .headerPost {
+      font-size: 16px;
+
+      strong {
+        font-size: 16px;
+      }
+    }
+
+    .photoPost {
+      img {
+        max-width: 500px;
+      }
+    }
+
+    .postFooter {
+      p.description,
+      strong.userName {
+        font-size: 14px;
+      }
+
+      p.description {
+        .showMore {
+          cursor: pointer;
+          font-size: 12px;
+          font-family: var(--fontBold);
+          color: var(--primaryColor2);
+        }
+
+        .threeDotsPost {
+          margin-left: -2px;
+        }
+      }
+      .postAction {
+        > img {
+          cursor: pointer;
+        }
+        .likes {
+          font-size: 12px;
+
+          strong {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+    .makeComment {
+      textarea {
+        font-size: 14px;
+        margin-right: 10px;
+      }
+    }
+  }
+}

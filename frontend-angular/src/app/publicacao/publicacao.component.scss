@@ -1,0 +1,71 @@
+@import "../../styles.scss";
+
+.containerPublicacao {
+  background-color: var(--white);
+
+  .conteudoPublicacao {
+    .primeiraEtapa {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding-top: 10%;
+      object-fit: contain;
+    }
+
+    .segundaEtapa {
+      display: flex;
+      align-items: center;
+      margin: auto;
+      padding: 14px;
+      border-bottom: 0.5px solid var(--gray1);
+      object-fit: contain;
+      
+      textarea {
+        resize: none;
+        border: none;
+        flex: 1;
+        margin-left: 14px;
+        font-size: 12px;
+        color: var(--gray2);
+        outline: none;
+      }
+    }
+  }
+
+  @media screen and (min-width: $breakpointDesktop) {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+
+    .linhaHorizontal {
+      width: 93%;
+    }
+
+    .conteudoPublicacao {
+      flex: 1;
+
+      .primeiraEtapa {
+        app-upload-image {
+          .textoArraste {
+            color: var(--gray4);
+            font-size: 14px;
+            display: block;
+            margin-bottom: 40px;
+          }
+        }
+      }
+
+      .segundaEtapa {
+        border-bottom: none;
+        display: flex;
+        padding: 20px;
+
+        textarea {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

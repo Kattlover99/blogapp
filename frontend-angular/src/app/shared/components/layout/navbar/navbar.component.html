@@ -1,0 +1,15 @@
+<nav class="navigationBar">
+  <ul>
+    <li (click)="redirectTo('home')">
+      <img [src]="getImage('home')" alt="Icone Home" />
+    </li>
+
+    <li (click)="redirectTo('publicacao')">
+      <img [src]="getImage('publicacao')" alt="Icone Publicação" />
+    </li>
+
+    <li (click)="redirectTo('perfil')">
+      <img [src]="getImage('perfil')" alt="Icone Perfil" />
+    </li>
+  </ul>
+</nav>

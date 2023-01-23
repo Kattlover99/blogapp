@@ -1,0 +1,41 @@
+@import "../../../../styles.scss";
+
+/* .avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 8px;
+
+  &.feedDesktop {
+    height: 50px;
+    width: 50px;
+  }
+} */
+
+.avatar {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 8px;
+  
+  &.feedDesktop {
+    height: 50px;
+    width: 50px;
+  }
+
+
+  @media screen and (min-width: $breakpointDesktop) {
+    &.feedDesktop {
+      height: 50px;
+      width: 50px;
+    }
+
+    &.profileAvatar {
+      height: 120px;
+      width: 120px;
+      margin-right: 40px;
+    }
+  }
+}

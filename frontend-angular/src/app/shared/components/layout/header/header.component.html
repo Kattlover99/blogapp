@@ -1,0 +1,40 @@
+<header class="mainHeader">
+  <div class="mainHeaderContent">
+    <div class="headerLogo">
+      <img
+        src="assets/images/logoHorizontal.svg"
+        alt="Logo"
+        (click)="goToHome()"
+      />
+    </div>
+
+    <div class="searchBarContainer">
+      <div class="searchIcon">
+        <img src="assets/images/lupa.svg" alt="Icone de Lupa" />
+      </div>
+      <input
+        type="text"
+        placeholder="Pesquisar"
+        [(ngModel)]="searchTerm"
+        (keyup)="searchUsers()"
+      />
+    </div>
+
+    <app-navbar class="desktop"></app-navbar>
+  </div>
+
+  <div class="searchResultContainer" *ngIf="searchResult.length > 0">
+    <div
+      *ngFor="let user of searchResult"
+      class="result"
+      (click)="goToUserProfile(user._id)"
+    >
+      <app-avatar [src]="user.avatar"></app-avatar>
+      <div class="userInformation">
+        <strong>{{ user.nome }}</strong>
+        <p>{{ user.email }}</p>
+      </div>
+    </div>
+  </div>
+  <!-- search component -->
+</header>

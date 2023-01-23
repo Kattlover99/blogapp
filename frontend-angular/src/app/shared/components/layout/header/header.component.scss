@@ -1,0 +1,112 @@
+@import "../../../../../styles.scss";
+
+.mainHeader {
+    border-bottom: 0.5px solid var(--gray1);
+    background-color: var(--white);
+
+    .mainHeaderContent {
+        display: flex;
+        padding: 8px 16px;
+        align-items: center;
+
+        .headerLogo {
+            cursor: pointer;
+        }
+
+        .searchBarContainer {
+            position: relative;
+            display: flex;
+            flex: 1;
+            margin-left: 16px;
+            align-items: center;
+
+            .searchIcon {
+                position: absolute;
+                top: 5px;
+                left: 8px;
+            }
+
+            input {
+                width: 100%;
+                background-color: var(--primaryColor3);
+                border: none;
+                outline: none;
+                border-radius: 4px;
+                font-size: 12px;
+                color: var(--primaryColor);
+                padding: 8px 8px 8px 36px;
+
+                &:focus {
+                    border: 1px solid var(--primaryColor);
+                }
+            }
+        }
+    }
+
+    .searchResultContainer {
+        position: absolute;
+        border-top: 0.5px solid var(--gray1);
+        background-color: var(--white);
+        width: 100%;
+
+        .result {
+            display: flex;
+            padding: 8px 12px;
+
+            &:hover {
+                background-color: var(--gray);
+            }
+
+            .userInformation {
+                flex: 1;
+
+                > * {
+                    display: block;
+                    font-size: 12px;
+                    color: var(--gray4);
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: $breakpointDesktop) {
+        border: none;
+        margin-bottom: 35px;
+
+        .mainHeaderContent {
+            width: 60%;
+            margin: auto;
+            justify-content: center;
+
+            .headerLogo {
+                width: 150px;
+                img {
+                    width: 100%;
+                }
+            }
+
+            .searchBarContainer {
+                flex: 0.40;
+                margin: 0px 30px 0px 45px;
+            }
+        }
+
+        .searchResultContainer {
+            width: 18%;
+            border-top: none;
+            margin: auto;
+            right: 0;
+            left: 45px;
+            cursor: pointer;
+            box-shadow: 0px 4px 5px var(--gray1);
+
+            .result {
+                .userInformation {
+                    > * {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
